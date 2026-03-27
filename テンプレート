@@ -1,0 +1,54 @@
+\documentclass[fontsize=15pt]{jlreq}
+
+%プリアンブル
+\usepackage{amsmath}
+\usepackage{mathtools}
+\pagestyle{empty}
+\usepackage[top=15mm, bottom=20mm, left=20mm, right=20mm]{geometry}
+
+%本文
+\begin{document}
+\begin{center}
+{\LARGE {振り返り}} \\
+-(内容)- %単元ごとに変えるか消す
+\end{center}
+\vspace{1em}
+\begin{flushright}
+名前：\underline{\hspace{5cm}}
+\end{flushright}
+
+% 問題部分
+\begin{enumerate}
+    \item 問題1\\
+    ( \hspace{2cm} )
+    \vspace{2em} 
+
+    \item 問題2\\
+    ( \hspace{2cm} )
+    \vspace{2em} 
+
+    \item 問題3(簡潔な記述)\\
+    ( \hspace{10cm} )
+    \vspace{2em} 
+
+    \item 問題4(穴埋め方式)
+    \vspace{2em} 
+
+    \item 問題5(複数の要素をきく問題)
+    \begin{itemize}
+      \item 一次電池：
+      \vspace{2em}
+      \item 二次電池：
+    \end{itemize}
+    \vspace{2em} 
+
+    \item 問題6(複数の要素をきく問題)
+    \begin{itemize}
+      \item 一次電池：
+      \vspace{2em}
+      \item 二次電池：
+    \end{itemize}
+
+\end{enumerate}
+
+\end{document}
