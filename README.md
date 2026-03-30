@@ -11,6 +11,7 @@
 - `\mathtoolsset{showonlyrefs=true}`
 - `\pagestyle{empty}`
 - `\usepackage[top=15mm, bottom=20mm, left=20mm, right=20mm]{geometry}`
+- `\newcommand{\m}[1]{\raisebox{0.1em}{\textcircled{\scriptsize #1}}}`
 
 ## タイトル
  - 中央寄せ
@@ -39,4 +40,6 @@
 
 
 ## 蛇足
-- pdfファイルの共有は本リポジトリを使用するか，googleドライブを経由して教室のPCで開けるようにする
+- -pdfファイルの共有は本リポジトリを使用するか，googleドライブを経由して教室のPCで開けるようにする-
+- リポジトリに貼ってあるoverleafのリンクからオンラインでTeX打ちができるようになりました
+- ①のような〇で囲んだ文字はプリアンブルでコマンド作ってます。例:\m{1}で①が出力可能。随時追加予定
