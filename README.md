@@ -6,4 +6,4 @@
  
 以下のリンクからシステムを利用できます。
 
- **[プリント作成システムを開く](https://shiraishies.github.io/juku_shuudanrika/test_generate/3/kagaku/kagaku.html)**
+ <a href="https://shiraishies.github.io/juku_shuudanrika/test_generate/3/kagaku/kagaku.html" target="_blank" rel="noopener noreferrer"><b>プリント作成システムを開く（別タブで開きます）</b></a>
