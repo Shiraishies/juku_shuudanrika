@@ -15,5 +15,13 @@
  [遺伝](kako/pdf/iden.pdf)<br/>
  [有性生殖・無性生殖](kako/pdf/seishoku.pdf)<br/>
  [進化](kako/pdf/sinka.pdf)<br/>
+
+## 物理
+[等速直線運動](kako/pdf/physics.pdf)<br/>
+[だんだん速くなる・遅くなる運動](kako/pdf/physics2.pdf)<br/>
+[力のつり合い](kako/pdf/physics3.pdf)<br/>
+[慣性，作用反作用の法則・圧力・浮力](kako/pdf/physics4.pdf)<br/>
+[エネルギー](kako/pdf/physics5(energy and work).pdf)<br/>
+[仕事](kako/pdf/physics6.pdf)<br/>
  
  
