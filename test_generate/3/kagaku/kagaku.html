@@ -56,7 +56,8 @@
 
 <script>
 // LaTeXの共通ヘッダー（A3横・2段組み設定をデフォルトに変更済み）
-const headerQuestion = `\\documentclass[11pt]{ltjsarticle}
+const headerQuestion = `% !TEX program = lualatex
+\\documentclass[11pt]{ltjsarticle}
 \\usepackage{tikz}
 \\usepackage{amsmath}
 \\usepackage{geometry}
