@@ -42,7 +42,6 @@
     <div style="margin-top: 20px;">
         <button onclick="generateCode()">LaTeXコードを生成</button>
         <button class="copy-btn" onclick="copyCode()">コードをコピー</button>
-        
         <button style="background: #E65100; margin-left: 10px;" onclick="openInOverleaf()">Overleafで直接開く</button>
         
         <form id="overleafForm" action="https://www.overleaf.com/docs" method="POST" target="_blank">
@@ -56,7 +55,7 @@
     <textarea id="outputCode" placeholder="ここに生成されたLaTeXコードが表示されます..." readonly></textarea>
 
 <script>
-// LaTeXの共通ヘッダー
+// LaTeXの共通ヘッダー（A3横・2段組み設定をデフォルトに変更済み）
 const headerQuestion = `\\documentclass[11pt]{ltjsarticle}
 \\usepackage{tikz}
 \\usepackage{amsmath}
@@ -131,18 +130,14 @@ function copyCode() {
     alert("コードをコピーしました！Overleafに貼り付けてください。");
 }
 
-function toOverleaf() {
+// Overleafにコードを送信して開く関数
+function openInOverleaf() {
     const outputCode = document.getElementById('outputCode').value;
-    
     if (outputCode === "") {
         alert("先に「LaTeXコードを生成」ボタンを押してください。");
         return;
     }
-    
-    // 隠しフォームの入力欄に、生成されたLaTeXコードをそっくりそのまま流し込む
     document.getElementById('overleafSnip').value = outputCode;
-    
-    // フォームを自動送信して、別タブでOverleafを起動する
     document.getElementById('overleafForm').submit();
 }
 </script>
