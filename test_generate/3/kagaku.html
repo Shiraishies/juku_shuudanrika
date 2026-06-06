@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>理科プリント自動生成ツール</title>
+<style>
+    body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
+    h1 { font-size: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }
+    .question-list { margin: 20px 0; background: #f9f9f9; padding: 15px; border-radius: 5px; }
+    .question-list label { display: block; margin-bottom: 10px; cursor: pointer; }
+    textarea { width: 100%; height: 300px; font-family: monospace; margin-top: 10px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #4CAF50; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #45a049; }
+    .copy-btn { background: #2196F3; margin-left: 10px; }
+    .copy-btn:hover { background: #0b7dda; }
+</style>
+</head>
+<body>
+
+    <h1>中三理科プリント 自動コード生成</h1>
+    
+    <div class="question-list">
+        <h3>問題を選択</h3>
+        <label><input type="checkbox" value="q1" checked> 1. 電解質と非電解質</label>
+        <label><input type="checkbox" value="q2" checked> 2. 塩化銅水溶液の電気分解</label>
+        <label><input type="checkbox" value="q3" checked> 3. 原子の構造と同位体</label>
+        <label><input type="checkbox" value="q4" checked> 4. イオンの名称とイオン式</label>
+        <label><input type="checkbox" value="q5" checked> 5. 指示薬と水溶液の色</label>
+        <label><input type="checkbox" value="q6" checked> 6. 酸・アルカリの正体とpH</label>
+        <label><input type="checkbox" value="q7" checked> 7. 中和と塩（えん）</label>
+        <label><input type="checkbox" value="q8" checked> 8. 金属のイオンへのなりやすさ</label>
+    </div>
+
+    <div>
+        <label><input type="radio" name="mode" value="question" checked> 問題用（空欄）</label>
+        <label><input type="radio" name="mode" value="answer"> 模範解答用（赤字）</label>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button onclick="generateCode()">LaTeXコードを生成</button>
+        <button class="copy-btn" onclick="copyCode()">コードをコピー</button>
+    </div>
+
+    <textarea id="outputCode" placeholder="ここに生成されたLaTeXコードが表示されます..." readonly></textarea>
+
+<script>
+// LaTeXの共通ヘッダー（問題・解答でタイトルを変える）
+const headerQuestion = `\\documentclass[11pt]{ltjsarticle}
+\\usepackage{tikz}
+\\usepackage{amsmath}
+\\usepackage{geometry}
+\\usepackage{xcolor}
+\\geometry{a4paper, margin=1.5cm}
+
+\\begin{document}
+
+\\begin{center}
+\\Large \\textbf{中三理科 1学期到達度テスト対策}
+\\end{center}
+\\begin{flushright}
+名前（ \\hspace{6cm} ）
+\\end{flushright}
+\\vspace{0.5cm}
+`;
+
+const headerAnswer = headerQuestion.replace("中三理科 1学期到達度テスト対策", "中三理科 1学期到達度テスト対策 【模範解答】");
+
+const footer = `\n\\end{document}`;
+
+// 各問題のデータ（q: 問題用, a: 解答用）
+// ※以下のバッククォート( ` )の間に、先ほど作成したLaTeXコードの各\section部分を貼り付けます。
+const data = {
+    q1: {
+        q: `\\section*{1. 電解質と非電解質}\n\\begin{enumerate}\n    \\item 水に溶かしたとき、水溶液に電流が流れる物質を（ \\hspace{4cm} ）、流れない物質を（ \\hspace{4cm} ）という。\n    \\item 次のア～オの物質から、(1)の物質をそれぞれ \\textbf{すべて} 選び、記号で答えなさい。\\\\[0.2cm]\n    ア. 塩化ナトリウム \\hspace{0.5cm} イ. 砂糖（ショ糖） \\hspace{0.5cm} ウ. 塩酸 \\hspace{0.5cm} エ. エタノール \\hspace{0.5cm} オ. 塩化銅\\\\[0.2cm]\n    流れる（ \\hspace{4.5cm} ） \\hspace{1cm} 流れない（ \\hspace{4.5cm} ）\n\\end{enumerate}\n`,
+        a: `\\section*{1. 電解質と非電解質}\n\\begin{enumerate}\n    \\item 水に溶かしたとき、水溶液に電流が流れる物質を（ \\textcolor{red}{\\textbf{電解質}} ）、流れない物質を（ \\textcolor{red}{\\textbf{非電解質}} ）という。\n    \\item 次のア～オの物質から、(1)の物質をそれぞれ \\textbf{すべて} 選び、記号で答えなさい。\\\\[0.2cm]\n    ア. 塩化ナトリウム \\hspace{0.5cm} イ. 砂糖（ショ糖） \\hspace{0.5cm} ウ. 塩酸 \\hspace{0.5cm} エ. エタノール \\hspace{0.5cm} オ. 塩化銅\\\\[0.2cm]\n    流れる（ \\textcolor{red}{\\textbf{ア、ウ、オ}} ） \\hspace{1cm} 流れない（ \\textcolor{red}{\\textbf{イ、エ}} ）\n\\end{enumerate}\n`
+    },
+    // ↓ 同様にq2〜q8のLaTeXソースコードを設定します（今回は例としてq2以降は省略形にしています。実際のコードを入れてください）
+    q2: { q: `\\section*{2. 塩化銅水溶液の電気分解}\n% ここに問題2のコードを記述\n`, a: `\\section*{2. 塩化銅水溶液の電気分解}\n% ここに解答2のコードを記述\n` },
+    q3: { q: `\\section*{3. 原子の構造と同位体}\n% ここに問題3のコードを記述\n`, a: `\\section*{3. 原子の構造と同位体}\n% ここに解答3のコードを記述\n` },
+    q4: { q: `\\section*{4. イオンの名称とイオン式}\n% ここに問題4のコードを記述\n`, a: `\\section*{4. イオンの名称とイオン式}\n% ここに解答4のコードを記述\n` },
+    q5: { q: `\\section*{5. 指示薬と水溶液の色}\n% ここに問題5のコードを記述\n`, a: `\\section*{5. 指示薬と水溶液の色}\n% ここに解答5のコードを記述\n` },
+    q6: { q: `\\section*{6. 酸・アルカリの正体とpH}\n% ここに問題6のコードを記述\n`, a: `\\section*{6. 酸・アルカリの正体とpH}\n% ここに解答6のコードを記述\n` },
+    q7: { q: `\\section*{7. 中和と塩}\n% ここに問題7のコードを記述\n`, a: `\\section*{7. 中和と塩}\n% ここに解答7のコードを記述\n` },
+    q8: { q: `\\section*{8. 金属のイオンへのなりやすさ}\n% ここに問題8のコードを記述\n`, a: `\\section*{8. 金属のイオンへのなりやすさ}\n% ここに解答8のコードを記述\n` },
+};
+
+// コードを生成してテキストエリアに出力する関数
+function generateCode() {
+    const checkboxes = document.querySelectorAll('.question-list input[type="checkbox"]');
+    const isAnswerMode = document.querySelector('input[name="mode"]:checked').value === "answer";
+    
+    let outText = isAnswerMode ? headerAnswer : headerQuestion;
+    
+    // チェックされた問題番号のLaTeXコードを連結
+    let questionCounter = 1;
+    checkboxes.forEach(cb => {
+        if (cb.checked) {
+            let sectionCode = isAnswerMode ? data[cb.value].a : data[cb.value].q;
+            // 選択した順番に合わせて大問の番号を振り直す（例: \section*{1. -> \section*{1. ）
+            sectionCode = sectionCode.replace(/\\section\*\{[0-9]+\./, `\\section*{${questionCounter}.`);
+            outText += sectionCode + "\n";
+            questionCounter++;
+        }
+    });
+    
+    outText += footer;
+    document.getElementById('outputCode').value = outText;
+}
+
+// クリップボードにコピーする関数
+function copyCode() {
+    const textarea = document.getElementById('outputCode');
+    if(textarea.value === "") {
+        alert("先にコードを生成してください。");
+        return;
+    }
+    textarea.select();
+    document.execCommand('copy');
+    alert("コードをコピーしました！Overleafに貼り付けてください。");
+}
+</script>
+
+</body>
+</html>
