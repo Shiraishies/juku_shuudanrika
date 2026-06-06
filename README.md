@@ -1,45 +1,6 @@
-# 振り返りプリント作成ルール
+# 集団授業用プリント保管場所
 
-## 1. 環境
-- 基本的な作業環境: VSCode
-- クラス: `jlreq` (15pt)
-- コンパイラ: `LuaLaTeX` または `uplatex`
-
-## プリアンブル
-- `\usepackage{amsmath}`
-- `\usepackage{mathtools}`
-- `\mathtoolsset{showonlyrefs=true}`
-- `\pagestyle{empty}`
-- `\usepackage[top=15mm, bottom=20mm, left=20mm, right=20mm]{geometry}`
-- `\newcommand{\m}[1]{\raisebox{0.1em}{\textcircled{\scriptsize #1}}}`
-
-## タイトル
- - 中央寄せ
- - 「振り返り」を`\LARGE`で
- - その下に内容を`-(内容)-`の形
- - 名前の欄を右側に設ける
-
-## 本文
-- enumerate環境に問題を追加していく．
-- 文体は「だ，である ．」，「，．」
-- 回答欄を()で設置．
-- 語句は`(\hspace{2cm})`，記述は`(\hspace{15cm})`程度が好ましい
-- 問題の間には`\vspace{2em}`
-- 選択肢の問題は，tabular環境の左詰め(l)で配置．正方行列が望ましい
-- 選択肢の回答欄は4cm程度空ける．
-- 複数の要素を回答させる問題はitemize環境を使用
-- 数式はalign環境で式番号は基本不要
-- 元素などのイタリックにしたくないアルファベットはmathrm環境を使用
-- 順番を答えさせる問題は`$\rightarrow$`で回答欄に順番を指定
-
-## 内容
-- 問題数は6~8問程度
-- A4用紙1ページに収めること
-- 記述問題等の思考力問題を最低1問入れること
-- 基本的に授業の範囲からであるが，以前の範囲も可
-
-
-## 蛇足
-- -pdfファイルの共有は本リポジトリを使用するか，googleドライブを経由して教室のPCで開けるようにする-
-- リポジトリに貼ってあるoverleafのリンクからオンラインでTeX打ちができるようになりました
-- ①のような〇で囲んだ文字はプリアンブルでコマンド作ってます。例:\m{1}で①が出力可能。随時追加予定
+#3年
+ #化学
+以下のリンクからシステムを利用できます。
+ **[プリント作成システムを開く]((https://shiraishies.github.io/juku_shuudanrika/test_generate/3/kagaku/kagaku.html))**
