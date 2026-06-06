@@ -8,13 +8,19 @@
 ### 振り返りプリント
 
  [イオンのなりやすさ・電池の仕組み](kako/pdf/denchi1.pdf)<br/>
- [ダニエル電池・いろいろな電池](kako/pdf/daniel.pdf)<br/>
+ [ダニエル電池・いろいろな電池](kako/pdf/daniel.pdf)<br/><br/>
+ [確認テスト 問題](確認テスト/3年/化学/3年化学_確認テスト問題.pdf)
+ [解答用紙](確認テスト/3年/化学/3年化学_確認テスト答案.pdf)
+ [模範解答](確認テスト/3年/化学/3年化学_確認テスト模範解答.pdf)
 
 ## 生物
  [細胞分裂](kako/pdf/saibou.pdf)<br/>
  [遺伝](kako/pdf/iden.pdf)<br/>
  [有性生殖・無性生殖](kako/pdf/seishoku.pdf)<br/>
- [進化](kako/pdf/sinka.pdf)<br/>
+ [進化](kako/pdf/sinka.pdf)<br/><br/>
+ [確認テスト 問題](確認テスト/3年/生物/3年生物_確認テスト問題.pdf)
+ [解答用紙](確認テスト/3年/生物/3年生物_確認テスト答案.pdf)
+ [模範解答](確認テスト/3年/生物/3年生物_確認テスト模範解答.pdf)
 
 ## 物理
 <a target="_blank">[等速直線運動](kako/pdf/physics.pdf)<br/></a>
