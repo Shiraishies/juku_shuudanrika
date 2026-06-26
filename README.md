@@ -31,6 +31,10 @@
 [力のつり合い](kako/pdf/physics3.pdf)<br/>
 [慣性，作用反作用の法則・圧力・浮力](kako/pdf/physics4.pdf)<br/>
 [エネルギー](kako/pdf/physics5_energy_work.pdf)<br/>
-[仕事](kako/pdf/physics6.pdf)<br/>
+[仕事](kako/pdf/physics6.pdf)<br/><br/>
+確認テスト
+[問題](確認テスト/3年/物理/3年物理_確認テスト問題.pdf)<br/>
+[解答用紙](確認テスト/3年/物理/3年物理_確認テスト解答用紙.pdf)<br/>
+[模範解答](確認テスト/3年/物理/3年物理_確認テスト模範解答.pdf)<br/>
  
  
