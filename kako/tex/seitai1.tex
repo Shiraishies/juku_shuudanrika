@@ -1,0 +1,107 @@
+\documentclass[fontsize=15pt]{jlreq}
+%プリアンブル
+\usepackage{amsmath}
+\usepackage{mathtools}
+\pagestyle{empty}
+\usepackage[margin=10mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+\usepackage{here}
+
+\newcommand{\m}[1]{\raisebox{0.1em}{\textcircled{\scriptsize #1}}}
+
+\newcommand{\drawpyramid}[3]{%
+  \begin{tikzpicture}[scale=0.7]
+    \def\h{1.2} % 各段の高さ
+    
+    % 下段：植物（生産者）
+    \draw[fill=gray!10, thick] (-#3/2, 0) rectangle (#3/2, \h);
+    \node at (0, 0.5*\h) {\footnotesize 植物};
+    
+    % 中段：草食動物（一次消費者）
+    \draw[fill=gray!25, thick] (-#2/2, \h) rectangle (#2/2, 2*\h);
+    \node at (0, 1.5*\h) {\footnotesize 草食動物};
+    
+    % 上段：肉食動物（二次消費者）
+    \draw[fill=gray!40, thick] (-#1/2, 2*\h) rectangle (#1/2, 3*\h);
+    \node at (0, 2.5*\h) {\footnotesize 肉食動物};
+  \end{tikzpicture}%
+}
+
+
+
+%本文
+\begin{document}
+\begin{center}
+{\LARGE {振り返り}} \\
+-生態- %単元ごとに変えるか消す
+\end{center}
+\vspace{1em}
+\begin{flushright}
+名前：\underline{\hspace{5cm}}
+\end{flushright}
+
+% 問題部分
+\begin{enumerate}
+  \item ある地域に生息，生育するすべての生物と，
+  その地域の水や空気，土などの環境とをひとつのまとまりでとらえた
+  ものを何というか．\\
+  (\hspace{3cm})
+
+  \vspace{2em}
+
+  \item 食物連鎖とはなにか説明せよ．\\
+  (\hspace{15cm})
+
+  \vspace{2em}
+
+  \item 一般的な生物の数量を多い順にかけ．(肉食動物，植物，草食動物から選ぶこと)\\
+  (\hspace{4cm}$\to$\hspace{4cm}$\to$\hspace{4cm})
+
+  \vspace{2em}
+
+  \item 次の図は，様々な状態の
+  生物ピラミッドを表している．今，
+  図アのように何等かの原因によって植物が
+  増えた状態となった．
+  この後の変化として正しい順番になるように
+  イ～エを並べ替えよ．
+
+  \begin{figure}[H]
+  \centering
+  
+  % --- 図1（ア）：植物だけが増加 ---1
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    \drawpyramid{1.6}{3.0}{6.0}\\[0.5em]
+    ア
+  \end{minipage}
+  \hfill
+  %元 4
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    \drawpyramid{1.6}{3.0}{4.4}\\[0.5em]
+    イ
+  \end{minipage}
+
+  \vspace{2em} % 上下の間隔
+
+  % --- 図3（ウ）：草食・肉食減少／植物回復 ---3
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    \drawpyramid{1.2}{1.8}{4.2}\\[0.5em]
+    ウ
+  \end{minipage}
+  \hfill
+  %肉，草増 2
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    \drawpyramid{2.0}{3.6}{4.0}\\[0.5em]
+    エ
+  \end{minipage}
+\end{figure}
+(ア$\to$\hspace{2cm}$\to$\hspace{2cm}$\to$\hspace{2cm})
+
+\end{enumerate}
+
+\end{document}
