@@ -38,6 +38,8 @@
 [模範解答](確認テスト/3年/物理/3年物理_確認テスト模範解答.pdf)<br/>
 
 ## 生態
-[生態系・食物連鎖・生物ピラミッド](kako/pdf/seitai1.pdf)
+[生態系・食物連鎖・生物ピラミッド](kako/pdf/seitai1.pdf)<br/>
+[生産者他，二酸化炭素](kako/pdf/seitai2.pdf)<br/>
+[科学技術と人間](kako/pdf/kagaku_ningen.pdf)<br/>
  
  
