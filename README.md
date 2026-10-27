@@ -5,6 +5,8 @@
 ## 化学
  <a href="https://shiraishies.github.io/juku_shuudanrika/test_generate/3/kagaku/kagaku.html" target="_blank" rel="noopener noreferrer"><b>定期テスト対策</b></a>
 
+
+
 ### 振り返りプリント
 
  [イオンのなりやすさ・電池の仕組み](kako/pdf/denchi1.pdf)<br/>
@@ -36,6 +38,12 @@
 [問題](確認テスト/3年/物理/3年物理_確認テスト問題.pdf)
 [解答用紙](確認テスト/3年/物理/3年物理_確認テスト解答用紙.pdf)
 [模範解答](確認テスト/3年/物理/3年物理_確認テスト模範解答.pdf)<br/>
+
+<br/>
+定期テストレベル問題
+[問題](テスト対策/3年/2学期/問題.pdf)
+[答案用紙](テスト対策/3年/2学期/答案.pdf)
+[模範解答](テスト対策/3年/2学期/答え.pdf)
 
 ## 天体
 [日周運動・太陽](kako/pdf/sun.pdf)<br/>
